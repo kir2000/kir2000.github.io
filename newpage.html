@@ -5,11 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Продолжить</title>
+    
 </head>
 <body>
     <div class="game-over-screen">
-        <h1 class="game-over-title">Game Over</h1>
+        <h1 class="game-over-title">Gay Over</h1>
+        <button id="subtitlesButton" class="toggle-stats-btn">Причина смерти: взрыв</button>
         <div class="stats-container">
+            <img src="background.jpg" alt="Background" class="stats-background">
             <ul class="stats-list">
                 <li>Причина смерти: взрыв</li>
                 <li>Золото: <span class="highlight"></span> (Лучший результат: )</li>
@@ -21,13 +24,26 @@
                 <li>Найдено предметов: <span class="highlight"></span> (Лучший результат: )</li>
                 <li>Всего смертей: <span class="highlight"></span></li>
                 <li>Всего побед: <span class="highlight"></span></li>
-            </ul>
-            <div class="menu-options">
-                <button class="menu-button">Новая игра</button>
-                <button class="menu-button">Прогресс</button>
-                <button class="menu-button">Выход</button>
-            </div>
+            </ul>   
         </div>
     </div>
+    <audio id="subtitlesSound" src="button.mp3"></audio> 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggleButton = document.querySelector('.toggle-stats-btn');
+            const statsContainer = document.querySelector('.stats-container');
+           
+            const subtitlesButton = document.getElementById('subtitlesButton');
+
+            subtitlesButton.addEventListener('click', () => {
+            subtitlesSound.currentTime = 0; 
+            subtitlesSound.play();
+        });
+
+            toggleButton.addEventListener('click', () => {
+                statsContainer.classList.toggle('open');
+            });
+        });
+    </script>
 </body>
 </html>
