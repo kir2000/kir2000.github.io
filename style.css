@@ -278,13 +278,15 @@ body {
     text-align: left;
     cursor: grab; 
     position: absolute; 
+    opacity: 0; 
+    transition: opacity 2s ease-in-out; 
 }
 
 .variant-2 {
     background-color: #003d2e;
     border-color: #00ff99;
     position: absolute;
-    top: 1  0px;
+    top: 10px;
     left: 1020px;
 }
 
@@ -293,7 +295,7 @@ body {
     border-color: #ffcc00;
     position: absolute;
     top: 50px;
-    left: 600px;
+    left: 500px;
 }
 
 .variant-1 {
@@ -302,4 +304,9 @@ body {
     position: absolute;
     top: 250px;
     left: 100px;
+}
+
+.fade-in {
+    opacity: 1;
+    transition: opacity 2s ease-in-out;
 }
