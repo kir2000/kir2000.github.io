@@ -29,22 +29,30 @@
                 <li>Всего побед: <span class="highlight"></span></li>
                 <li>Всего побед: <span class="highlight"></span></li>   
                 <li>Всего побед: <span class="highlight"></span></li>
-
             </ul>   
         </div>
     </div>
     <audio id="subtitlesSound" src="button.mp3"></audio> 
+    <audio id="backgroundMusic" src="Flawed Mangoes - Dramamine (Visualizer) (mp3cut.net)(2).mp3" preload="auto"></audio> 
+
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+        
+            const backgroundMusic = document.getElementById('backgroundMusic');
+          
+            setTimeout(() => {
+                backgroundMusic.play();
+            }, 2000); 
+
             const toggleButton = document.querySelector('.toggle-stats-btn');
             const statsContainer = document.querySelector('.stats-container');
            
             const subtitlesButton = document.getElementById('subtitlesButton');
 
             subtitlesButton.addEventListener('click', () => {
-            subtitlesSound.currentTime = 0; 
-            subtitlesSound.play();
-        });
+                subtitlesSound.currentTime = 0; 
+                subtitlesSound.play();
+            });
 
             toggleButton.addEventListener('click', () => {
                 statsContainer.classList.toggle('open');

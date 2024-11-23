@@ -12,18 +12,15 @@
     </header>
     <div class="splash">
         <p class="initial-block flowing">
-            <button id="continueButton">Продолжить</button> <br>
-            <button id="subtitlesButton">Субтитры</button>
+            <button class="main-button" id="continueButton">Продолжить</button> <br>
         </p>
         <img src="Background.jpg" alt="">   
     </div>
 
     <audio id="continueSound" src="continue.mp3"></audio> 
-    <audio id="subtitlesSound" src="button.mp3"></audio> 
 
     <script>
         const continueButton = document.getElementById('continueButton');
-        const subtitlesButton = document.getElementById('subtitlesButton');
         const splash = document.querySelector('.splash');
 
         continueButton.addEventListener('click', () => {
@@ -37,10 +34,6 @@
             }, 3000); 
         });
 
-        subtitlesButton.addEventListener('click', () => {
-            subtitlesSound.currentTime = 0; 
-            subtitlesSound.play();
-        });
     </script>
 </body>
 </html>
