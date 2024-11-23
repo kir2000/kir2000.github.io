@@ -23,7 +23,6 @@
     background-color: #814726;
     object-fit: cover;
     object-position: 0% 50%;
-    border-bottom: 5px solid #bf4c00aa;
     overflow: hidden;
     transition: opacity 2s ease-in-out; 
 }
@@ -120,6 +119,7 @@ body {
 
 .stats-container {
     font-size: 25px;
+    
     line-height: 1.8;
     max-height: 0;
     padding: 0px;
@@ -135,7 +135,7 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover; 
-    opacity: 0.2;      
+    opacity: 0.9;      
     z-index: 0;        
 }
 .stats-container.open {
@@ -146,7 +146,7 @@ body {
 .stats-list {
     list-style-type: none;
     padding: 0;
-    margin: 0 0 20px 0;
+    margin: 10px 10px 20px 25px;
     text-align: left;
     color: #e0e0e0;
     position: relative; 
@@ -177,4 +177,24 @@ body {
 .toggle-stats-btn:hover {
     color: #d9920d;
     transform: scale(1.05);
+}
+.stats-background2 {
+    position: absolute; /* Абсолютное позиционирование */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Масштабирует картинку, чтобы она заполнила весь экран */
+    z-index: -2;
+}
+
+.stats-background2::before {
+    content: ''; /* Создаём пустой элемент */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Черный цвет с прозрачностью 50% */
+    z-index: -1; /* Псевдоэлемент будет поверх картинки */
 }
