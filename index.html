@@ -12,7 +12,8 @@
     </header>
     <div class="splash">
         <p class="initial-block flowing">
-            <button class="main-button" id="continueButton">Продолжить</button> <br>
+            <button class="main-button game-over-title" id="counter">19</button> <br>
+            <button class="main-button " id="continueButton">Продолжить</button> <br>
         </p>
         <img src="Background.jpg" alt="">   
     </div>
@@ -22,6 +23,16 @@
     <script>
         const continueButton = document.getElementById('continueButton');
         const splash = document.querySelector('.splash');
+        const counter = document.getElementById('counter');
+
+
+        setTimeout(() => {
+            counter.classList.add('fade-out');
+            setTimeout(() => {
+                counter.textContent = "20";    
+                counter.classList.remove('fade-out'); 
+            }, 500); 
+        }, 1000);
 
         continueButton.addEventListener('click', () => {
             continueSound.currentTime = 0; 

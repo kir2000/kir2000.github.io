@@ -5,31 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Продолжить</title>
-    
 </head>
 <body>
     <img src="1234.png" alt="Background" class="stats-background2">
     <div class="game-over-screen">
-        <h1 class="game-over-title">Gay Over</h1>
-        <button id="subtitlesButton" class="toggle-stats-btn">Причина смерти: взрыв</button>
+        <h1 class="game-over-title">Game Over</h1>
+        <h1 class="game-over-title" style="font-size: 30px;">Причина смерти: Передоз от энергосов</h1>
+        <button id="subtitlesButton" class="toggle-stats-btn" style="font-size: 30px;" >
+            Вы мертвы - нажмите здесь и посмотрите статистику
+        </button>
         <div class="stats-container">
-            <img src="Mainbackground.png" alt="Background" class="stats-background">
-            <ul class="stats-list">
-                <li>Причина смерти: взрыв</li>
-                <li>Золото: <span class="highlight"></span> (Лучший результат: )</li>
-                <li>Время: <span class="highlight"></span></li>
-                <li>Глубина: <span class="highlight"></span> (Лучший результат:)</li>
-                <li>Посещено мест: <span class="highlight"></span> (Лучший результат:)</li>
-                <li>Убито врагов: <span class="highlight"></span> (Лучший результат: )</li>
-                <li>Макс. ОЗ: <span class="highlight"></span> (Лучший результат: )</li>
-                <li>Найдено предметов: <span class="highlight"></span> (Лучший результат: )</li>
-                <li>Всего смертей: <span class="highlight"></span></li>
-                <li>Всего побед: <span class="highlight"></span></li>
-                <li>Всего побед: <span class="highlight"></span></li>
-                <li>Всего побед: <span class="highlight"></span></li>
-                <li>Всего побед: <span class="highlight"></span></li>   
-                <li>Всего побед: <span class="highlight"></span></li>
-            </ul>   
+            <img src="noitaa.jpg" alt="Background" class="stats-background">
+            <ul id="statsList" class="stats-list">
+                <li class="game-over-title" style="font-size: 30px;">Замена списка через <span id="timer">30</span> секунд</li>
+                <li>Пройдено заданий Геншина: <span class="highlight"> все нахуй)</span></li>
+                <li>Осуществлен косплей <span class="highlight">БХ</span> и <span class="highlight">Гослинга </span></li>
+                <li>Схавано строительной пены: <span class="highlight">3 шт</span></li>
+                <li>Собрана тринька: <span class="highlight">1</span></li>
+                <li>Покрашено магнитиков для сис: <span class="highlight">+/- 1</span></li>
+                <li>Градус угла челюги: <span class="highlight">135</span></li>
+                <li>Зарегестрировано попаданий в бога: <span class="highlight">1</span></li>
+                <li>Максимум настакано урона сфер тьмы: <span class="highlight">452</span></li>
+                <li>Захуярено <img src="Monster_Longleg.png"> ядеркой: <span class="highlight">???</span></li>
+                <li>Захуярено <img src="Monster_Longleg.png"> табличкой: <span class="highlight">???³</span></li>
+                <li>Получено золота с <img src="Monster_Longleg.png">: <span class="highlight">достаточно, чтобы купить галактику</span></li>
+            </ul>
         </div>
     </div>
     <audio id="subtitlesSound" src="button.mp3"></audio> 
@@ -38,26 +38,66 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
         
-            const backgroundMusic = document.getElementById('backgroundMusic');
-          
-            setTimeout(() => {
-                backgroundMusic.play();
-            }, 2000); 
+        const backgroundMusic = document.getElementById('backgroundMusic');
+      
+        setTimeout(() => {
+            backgroundMusic.play();
+        }, 2000); 
 
-            const toggleButton = document.querySelector('.toggle-stats-btn');
-            const statsContainer = document.querySelector('.stats-container');
-           
-            const subtitlesButton = document.getElementById('subtitlesButton');
+        const toggleButton = document.querySelector('.toggle-stats-btn');
+        const statsContainer = document.querySelector('.stats-container');
+       
+        const subtitlesButton = document.getElementById('subtitlesButton');
 
-            subtitlesButton.addEventListener('click', () => {
-                subtitlesSound.currentTime = 0; 
-                subtitlesSound.play();
-            });
-
-            toggleButton.addEventListener('click', () => {
-                statsContainer.classList.toggle('open');
-            });
+        subtitlesButton.addEventListener('click', () => {
+            subtitlesSound.currentTime = 0; 
+            subtitlesSound.play();
         });
+
+        toggleButton.addEventListener('click', () => {
+            statsContainer.classList.toggle('open');
+        });
+    });
+    document.addEventListener('DOMContentLoaded', () => {
+    const timerElement = document.getElementById('timer');
+    const statsList = document.getElementById('statsList');
+
+    const newStats = [
+        "<li>Совершенно круток для выбивания С6 Сары: <span class='highlight'>45 (безрезультатных)</span>",
+        "<li>Коуч-трейнинг от мамы по скаму:: <span class='highlight'>1</span></li>",
+        "<li>Игручек было в разработке: <span class='highlight'>4</span></li>",
+        "<li>Нагнутая армейка: <span class='highlight'>1 (или нет)</span></li>",
+        "<li>Потенциальное количество парней: <span class='highlight'>∞</span></li>",
+        "<li>Каток в доте: <span class='highlight'>1</span></li>",
+        "<li>Потенциальное количество девушек: <span class='highlight'>1</span></li>",
+        "<li>Осилено модов в RoR2: <span class='highlight'>90</span></li>",
+        "<li>Рисунков ноиты: <span class='highlight'>3</span></li>",
+        "<li>Амулетов Йендора: <span class='highlight'>1</span></li>",
+        "<li>Проёбано сейвов ноиты: <span class='highlight'>1</span></li>",
+        "<li>Потерян настоящий Друк: <span class='highlight'>1</span></li>",
+        "<li>Вылетивший компутер от карты ноиты: <span class='highlight'>1</span></li>",
+        "<li>Разочарование в связи со слитым Новопятигорским озером: <span class='highlight'>б̀еͯͤз͛ͬг͛͆р̃ͣа̔̕н̕͜и̕чно</span></li>",
+        "<li>Карандашей отжатых друзьями в дурке: <span class='highlight'>1</span></li>",
+    ];
+
+    let timeLeft = 30;
+
+    const countdown = setInterval(() => {
+        timeLeft--;
+        timerElement.textContent = timeLeft;
+
+        if (timeLeft <= 0) {
+            clearInterval(countdown);
+
+            statsList.classList.add('hidden');
+
+            setTimeout(() => {
+                statsList.innerHTML = newStats.join("");
+                statsList.classList.remove('hidden');
+            }, 500); 
+        }
+    }, 1000);
+});
     </script>
 </body>
 </html>
