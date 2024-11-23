@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet"/>
+    <title>Главная</title>
+</head>
+<body>
+    <header>
+
+    </header>
+    <div class="splash">
+        <p class="initial-block flowing">
+            <button id="continueButton">продолжить</button> <br>
+            <button id="subtitlesButton">субтитры</button>
+        </p>
+        <img src="Background.jpg" alt="">   
+    </div>
+
+    <audio id="continueSound" src="continue.mp3"></audio> 
+    <audio id="subtitlesSound" src="button.mp3"></audio> 
+
+    <script>
+        const continueButton = document.getElementById('continueButton');
+        const subtitlesButton = document.getElementById('subtitlesButton');
+        const continueSound = document.getElementById('continueSound');
+        const subtitlesSound = document.getElementById('subtitlesSound');
+        const splash = document.querySelector('.splash');
+
+        continueButton.addEventListener('click', () => {
+            continueSound.currentTime = 0; 
+            continueSound.play();
+
+            splash.classList.add('fade-out');
+
+            setTimeout(() => {
+                window.location.href = 'newpage.html'; 
+            }, 3000); 
+        });
+
+        subtitlesButton.addEventListener('click', () => {
+            subtitlesSound.currentTime = 0; 
+            subtitlesSound.play();
+        });
+    </script>
+</body>
+</html>
