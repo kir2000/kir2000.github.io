@@ -119,7 +119,6 @@ body {
 
 .stats-container {
     font-size: 25px;
-    
     line-height: 1.8;
     max-height: 0;
     padding: 0px;
@@ -134,12 +133,11 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; 
-    opacity: 0.9;      
+    object-fit: cover;   
     z-index: 0;        
 }
 .stats-container.open {
-    max-height: 500px;
+    max-height: 800px;
     opacity: 1;
 }
 
@@ -179,22 +177,11 @@ body {
     transform: scale(1.05);
 }
 .stats-background2 {
-    position: absolute; /* Абсолютное позиционирование */
+    position: absolute; 
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Масштабирует картинку, чтобы она заполнила весь экран */
-    z-index: -2;
-}
-
-.stats-background2::before {
-    content: ''; /* Создаём пустой элемент */
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Черный цвет с прозрачностью 50% */
-    z-index: -1; /* Псевдоэлемент будет поверх картинки */
+    object-fit: cover; 
+    z-index: -1;      
 }
